@@ -5,7 +5,5 @@ import requests
 import os
 
 with open("log.txt", 'a+') as file:
-    fds = FlightawareDataSource()
-    fp = FlightParser()
-    a = fp.getLastDepartmentInAirport(fds, "SVO")
+    lastDepartmentSVO = FlightParser.getLastDepartmentInAirport(FlightawareDataSource(), "SVO")
     file.write(a[0] + " " + a[1])
