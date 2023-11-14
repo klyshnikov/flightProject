@@ -4,17 +4,17 @@ class DataSource:
     link = None
     airportICAO = None
     airportIATA = None
-    icaoToIataMap = {}
-    iataToIcaoMap = {}
+    icaoToIataMap = {"UUEE": "SVO"}
+    iataToIcaoMap = {"SVO": "UUEE"}
 
     @abstractmethod
-    def getLinkOfAirport(airport: str):
+    def getLinkOfAirport(self, airport: str):
         pass
 
     @abstractmethod
-    def setAirport(airport: str):
+    def setAirport(self, airport: str):
         pass
 
     @abstractmethod
-    def getLastDepartmentInAirport(airport: str):
+    def getLastDepartmentInAirport(self, airport: str):
         pass
