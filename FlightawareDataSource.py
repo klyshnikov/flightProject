@@ -9,14 +9,6 @@ class FlightawareDataSource(DataSource):
             airport = DataSource.iataToIcaoMap[airport]
         return "https://ru.flightaware.com/live/airport/" + airport
 
-    def setAirport(self, airport: str):
-        if (len(airport) == 3):
-            airportICAO = DataSource.iataToIcaoMap[airport]
-            airportIATA = airport
-        else:
-            airportICAO = airport
-            airportIATA = DataSource.icaoToIataMap[airport]
-
     def getTables(self, airport: str, link: str):
         page = requests.get(link)
         bsObject = BeautifulSoup(page.text, "html.parser")
