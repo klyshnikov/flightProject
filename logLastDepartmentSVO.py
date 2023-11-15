@@ -6,4 +6,4 @@ import os
 
 with open("log.txt", 'a+') as file:
     lastDepartmentSVO = FlightParser.getLastDepartmentInAirport(FlightawareDataSource(), "SVO")
-    file.write(a[0] + " " + a[1])
+    file.write(lastDepartmentSVO[0] + " " + lastDepartmentSVO[1])
