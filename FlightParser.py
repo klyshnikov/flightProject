@@ -3,13 +3,15 @@ from abc import ABC, abstractmethod
 import requests
 from DataSource import DataSource
 from FlightawareDataSource import FlightawareDataSource
+from Flightradar24apiDataSource import Flightradar24apiDataSource
 
 
 class FlightParser:
-    @staticmethod
-    def getLastDepartmentInAirport(dataSource: DataSource, airport: str):
-        return dataSource.getLastDepartmentInAirport(airport)
+    parser = None
 
-    @staticmethod
-    def getLastArrivalInAirport(dataSource: DataSource, airport: str):
-        return dataSource.getLastArrivalInAirport(airport)
+    def setParser(self, parser: DataSource):
+        self.parser = parser
+
+
+    
+    

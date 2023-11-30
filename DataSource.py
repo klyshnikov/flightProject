@@ -6,6 +6,7 @@ class DataSource:
     airportIATA = None
     icaoToIataMap = {"UUEE": "SVO"}
     iataToIcaoMap = {"SVO": "UUEE"}
+    airCompanies = []
 
     def setAirport(self, airport: str):
         if (len(airport) == 3):
@@ -14,6 +15,7 @@ class DataSource:
         else:
             airportICAO = airport
             airportIATA = DataSource.icaoToIataMap[airport]
+
 
     @abstractmethod
     def getLinkOfAirport(self, airport: str):
