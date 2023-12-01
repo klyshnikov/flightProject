@@ -4,8 +4,8 @@ class DataSource:
     link = None
     airportICAO = None
     airportIATA = None
-    icaoToIataMap = {"UUEE": "SVO"}
-    iataToIcaoMap = {"SVO": "UUEE"}
+    icaoToIataMap = {"UUEE": "SVO"} #To be continued
+    iataToIcaoMap = {"SVO": "UUEE"} #To be continued
     airCompanies = []
 
     def setAirport(self, airport: str):
