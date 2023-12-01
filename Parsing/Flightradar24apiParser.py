@@ -1,9 +1,9 @@
-from DataSource import DataSource
+from Parsing.DataSource import DataSource
 from bs4 import BeautifulSoup
 import requests
 from FlightRadar24 import FlightRadar24API
 
-class Flightradar24apiDataSource(DataSource):
+class Flightradar24apiParser(DataSource):
 
     frObject = FlightRadar24API()
 
@@ -39,16 +39,30 @@ class Flightradar24apiDataSource(DataSource):
         return allCurrentFlights
 
     def getInfoOfAllCurrentFlights(self):
-        infoOfAllCurrentFlights = self.getAllCurrentFlights()
-        for i in range(len(infoOfAllCurrentFlights)):
-            infoOfAllCurrentFlights[i] = {infoOfAllCurrentFlights[i].id : self.frObject.get_flight_details(infoOfAllCurrentFlights[i].id)}
+        allCurrentFlights = self.getAllCurrentFlights()
+        infoOfAllCurrentFlights = []
+        size = 0
+        flightsIter = 0
+        while (size < len(allCurrentFlights)):
+            try:
+                print(size)
+                infoOfAllCurrentFlights.append( {
+                    allCurrentFlights[flightsIter].id: self.frObject.get_flight_details(allCurrentFlights[flightsIter].id)})
+                size += 1
+                if (size == 50) :
+                    break
+            except BaseException:
+                pass
+            else:
+                pass
+            flightsIter += 1
         return infoOfAllCurrentFlights
 
 
     def getLastDepartmentInAirport(self, airport: str):
         frObject = FlightRadar24API()
-        svo = frObject.get_airport_details(airport)
-        for i in svo['airport']['pluginData']['schedule']['departures']['data']:
+        details = frObject.get_airport_details(airport)
+        for i in details['airport']['pluginData']['schedule']['departures']['data']:
             if (i['flight']['identification']['id'] != None):
                 print(i)
         #print(svo['airport']['pluginData']['schedule']['departures']['data'][2])
