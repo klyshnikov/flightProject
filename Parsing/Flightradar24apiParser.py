@@ -49,8 +49,6 @@ class Flightradar24apiParser(DataSource):
                 infoOfAllCurrentFlights.append( {
                     allCurrentFlights[flightsIter].id: self.frObject.get_flight_details(allCurrentFlights[flightsIter].id)})
                 size += 1
-                if (size == 50) :
-                    break
             except BaseException:
                 pass
             else:
