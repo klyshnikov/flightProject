@@ -1,0 +1,7 @@
+namespace flightORM {
+
+    class Sector {
+
+    };
+
+}
