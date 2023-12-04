@@ -5,7 +5,7 @@ namespace flightORM {
 
      }
 
-    std::vector<BaseField> Flight::objects() {
-         return allRecorderFields;
+    std::vector<IBaseField> Flight::objects() {
+         return m_allRecorderFields;
      }
 }

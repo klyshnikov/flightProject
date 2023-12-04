@@ -1,3 +1,5 @@
+#include "Model.h"
+
 namespace flightORM {
 
     class Position {

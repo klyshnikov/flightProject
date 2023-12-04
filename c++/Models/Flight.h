@@ -6,10 +6,12 @@
 #include "../IBaseField.h"
 #include "../IRecordedField.h"
 #include "map"
+#include "../DataBaseManagers/IDataBaseManager.h"
+#include "Model.h"
 
 namespace flightORM {
 
-    struct Flight{
+    struct Flight : public Model{
     private:
         std::vector<IBaseField> m_allRecorderFields = {id, plane, position, sector, speed};
     public:

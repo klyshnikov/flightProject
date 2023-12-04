@@ -1,6 +1,8 @@
+#include "Model.h"
+
 namespace flightORM {
 
-    struct Plane {
+    struct Plane : public Model{
 
     };
 

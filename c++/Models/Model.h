@@ -1,0 +1,7 @@
+namespace flightORM {
+
+    struct Model {
+
+    };
+
+}
