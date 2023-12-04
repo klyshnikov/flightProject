@@ -3,8 +3,8 @@
 #include "Position.h"
 #include "Sector.h"
 #include "vector"
-#include "IBaseField.h"
-#include "IRecordedField.h"
+#include "../IBaseField.h"
+#include "../IRecordedField.h"
 #include "map"
 
 namespace flightORM {

@@ -10,12 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="542eb3f8-7f71-49ec-ac7b-8b218950824f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/IBaseField.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IBaseField.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flight.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Flight.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flight.h" beforeDir="false" afterPath="$PROJECT_DIR$/Flight.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IRecordedField.h" beforeDir="false" afterPath="$PROJECT_DIR$/IRecordedField.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flight.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Flight.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flight.h" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Flight.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plane.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Plane.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plane.h" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Plane.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Position.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Position.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Position.h" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Position.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sector.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Sector.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sector.h" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Sector.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +57,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Models" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="test.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="c++" TARGET_NAME="test.cpp" CONFIG_NAME="test.cpp">
       <option name="sourceFile" value="test.cpp" />
@@ -76,7 +85,7 @@
       <updated>1701437568796</updated>
       <workItem from="1701437569815" duration="4632000" />
       <workItem from="1701632015580" duration="6013000" />
-      <workItem from="1701707293428" duration="1782000" />
+      <workItem from="1701707293428" duration="2689000" />
     </task>
     <servers />
   </component>
