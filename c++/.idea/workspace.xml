@@ -10,15 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="542eb3f8-7f71-49ec-ac7b-8b218950824f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/DataBaseManagers/IDataBaseManager.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataBaseManagers/IDataBaseManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/Model.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/Model.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Table.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Table.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flight.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Flight.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flight.h" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Flight.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plane.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Plane.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plane.h" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Plane.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Position.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Position.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Position.h" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Position.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sector.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Sector.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sector.h" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Sector.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Flight.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Flight.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Flight.h" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Flight.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Plane.h" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Plane.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Position.h" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Position.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Sector.h" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Sector.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,21 +45,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/mihail/flightProject/c++/test.cpp&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "/home/mihail/flightProject/c++/test.cpp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Models" />
@@ -85,7 +89,7 @@
       <updated>1701437568796</updated>
       <workItem from="1701437569815" duration="4632000" />
       <workItem from="1701632015580" duration="6013000" />
-      <workItem from="1701707293428" duration="2689000" />
+      <workItem from="1701707293428" duration="7070000" />
     </task>
     <servers />
   </component>
