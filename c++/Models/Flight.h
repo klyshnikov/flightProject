@@ -11,7 +11,7 @@
 
 namespace flightORM {
 
-    struct Flight : public Model{
+    struct Flight : public Model {
     private:
         std::vector<IBaseField> m_allRecorderFields = {id, plane, position, sector, speed};
     public:

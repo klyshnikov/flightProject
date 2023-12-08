@@ -5,7 +5,8 @@
 
 namespace flightORM {
     class IDataBaseManager {
-        Table createTable();
+        Table createTable(Model* modelType);
+
         virtual void Insert(Table* table, Model* model_obj);
         virtual void Select(Table* table, const std::vector<std::string>& columns);
 
