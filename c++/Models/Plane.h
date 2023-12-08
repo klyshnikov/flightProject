@@ -2,7 +2,7 @@
 
 namespace flightORM {
 
-    struct Plane : public Model{
+    struct Plane : public Model {
 
     };
 
