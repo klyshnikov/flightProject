@@ -12,9 +12,9 @@
 namespace flightORM {
 
     struct Flight : public Model {
-    private:
-        std::vector<IBaseField> m_allRecorderFields = {id, plane, position, sector, speed};
     public:
+        std::vector<IBaseField> m_allRecorderFields = {id, plane, position, sector, speed};
+
         flightORM::IRecordedField<std::string> id;
         flightORM::IRecordedField<flightORM::Plane> plane;
         flightORM::IRecordedField<flightORM::Position> position;
@@ -24,7 +24,15 @@ namespace flightORM {
         std::vector<IBaseField> objects();
 
         Flight();
-    };
 
+        Flight(std::string id, flightORM::Plane plane,
+               flightORM::Position position, flightORM::Sector sector, double speed);
+
+        Flight( flightORM::IRecordedField<std::string> id,
+               flightORM::IRecordedField<flightORM::Plane> plane,
+               flightORM::IRecordedField<flightORM::Position> position,
+               flightORM::IRecordedField<flightORM::Sector> sector,
+               flightORM::IRecordedField<double> speed );
+    };
 }
 

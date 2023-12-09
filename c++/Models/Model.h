@@ -2,6 +2,7 @@
 #include "vector"
 #include "../IBaseField.h"
 
+
 namespace flightORM {
 
     struct Model {
