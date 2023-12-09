@@ -2,21 +2,21 @@
 
 namespace flightORM {
     template <class T>
-    std::vector<std::string> IRecordedField<T>::getColumns() {
-        std::vector<std::string> colums{};
+    std::vector<std::string> IRecordedField<T>::getValues() {
+        std::vector<std::string> values{};
         if (m_isPrimary) {
-            colums.emplace_back(std::to_string(&m_field));
-            return colums;
+            values.emplace_back(std::to_string(&m_field));
+            return values;
         }
-        
-        std::vector<std::string> innerColumns;
+
+        std::vector<std::string> innerValues;
         for (auto field : m_field->m_allRecorderFields) {
-            innerColumns = field.getColumns();
-            for (auto el : innerColumns) {
-                colums.emplace_back(el);
+            innerValues = field.getColumns();
+            for (auto el : innerValues) {
+                values.emplace_back(el);
             }
         }
 
-        return colums;
+        return values;
     }
 }

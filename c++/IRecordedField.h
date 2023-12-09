@@ -34,7 +34,8 @@ namespace flightORM {
 
         void setValue(T field);
 
-        std::vector<std::string> getColumns();
+        std::vector<std::string> getValues();
+        std::vector<std::string> getTypes();
     };
 
 }

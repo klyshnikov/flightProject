@@ -10,10 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="542eb3f8-7f71-49ec-ac7b-8b218950824f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IRecordedField.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/IRecordedField.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IRecordedField.h" beforeDir="false" afterPath="$PROJECT_DIR$/IRecordedField.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Model.h" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Model.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +81,7 @@
       <workItem from="1701707293428" duration="7175000" />
       <workItem from="1701715413657" duration="14000" />
       <workItem from="1702060598101" duration="8372000" />
-      <workItem from="1702116810383" duration="2686000" />
+      <workItem from="1702116810383" duration="3127000" />
     </task>
     <servers />
   </component>
