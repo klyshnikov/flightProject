@@ -1,4 +1,6 @@
 #include "iostream"
+#include "Models/Model.h"
+
 
 int main() {
     // Пример
@@ -20,4 +22,6 @@ int main() {
      По итогу 2 записанные таблицы
 
      * */
+
+    //flightORM::Flight fl()
 }

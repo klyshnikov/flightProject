@@ -5,7 +5,8 @@ namespace flightORM {
 
     class Table {
     private:
-        Model modelType;
+        Model m_modelType;
+        std::vector<std::string> m_types;
     };
 
 }
