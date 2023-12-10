@@ -7,17 +7,16 @@ namespace flightORM {
 
     class Position {
     public:
-        std::vector<IBaseField> m_allRecorderFields = {x, y, hight};
+        RecorderFieldsManager recorderFieldsManager;
 
-        flightORM::IRecordedField<double> x;
-        flightORM::IRecordedField<double> y;
-        flightORM::IRecordedField<double> hight;
+        double x;
+        double y;
+        double hight;
+
+        Position() = default;
 
         Position(double x, double y, double hight);
 
-        Position( flightORM::IRecordedField<double> x,
-                 flightORM::IRecordedField<double> y,
-                 flightORM::IRecordedField<double> hight );
     };
 
 }

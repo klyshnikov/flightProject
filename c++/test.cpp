@@ -1,5 +1,8 @@
 #include "iostream"
 #include "Models/Model.h"
+#include "Models/Flight.h"
+#include "Models/Plane.h"
+#include "IRecordedField.h"
 
 
 int main() {
@@ -23,5 +26,4 @@ int main() {
 
      * */
 
-    //flightORM::Flight fl()
 }

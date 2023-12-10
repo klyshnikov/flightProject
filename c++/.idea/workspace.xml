@@ -10,13 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="542eb3f8-7f71-49ec-ac7b-8b218950824f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/includes.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RecorderFieldsManager.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RecorderFieldsManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IBaseField.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/IBaseField.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IBaseField.h" beforeDir="false" afterPath="$PROJECT_DIR$/IBaseField.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IRecordedField.h" beforeDir="false" afterPath="$PROJECT_DIR$/IRecordedField.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Flight.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Flight.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/Flight.h" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Flight.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Model.h" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Model.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Plane.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Plane.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/Plane.h" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Plane.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Position.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Position.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/Position.h" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Position.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Table.h" beforeDir="false" afterPath="$PROJECT_DIR$/Table.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Sector.h" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Sector.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +94,8 @@
       <workItem from="1701715413657" duration="14000" />
       <workItem from="1702060598101" duration="8372000" />
       <workItem from="1702116810383" duration="5042000" />
-      <workItem from="1702144380524" duration="3169000" />
+      <workItem from="1702144380524" duration="8830000" />
+      <workItem from="1702204008030" duration="3733000" />
     </task>
     <servers />
   </component>

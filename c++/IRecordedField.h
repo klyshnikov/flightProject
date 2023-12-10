@@ -9,14 +9,13 @@ namespace flightORM {
     class IRecordedField : public IBaseField {
     private:
         T* m_field = nullptr;
-        std::string m_name = nullptr;
         std::string m_type = nullptr;
     public:
 //        class stringiIterator : public std::iterator <std::input_iterator_tag, IBaseField*> {
 //        public:
 //            bool operator!=(IRecordedField const& other) const;
 //            bool operator==(IRecordedField const& other) const;
-//            stringiIterator& operator++();
+//            stringIterator& operator++();
 //            reference operator*();
 //
 //            //TODO: logic
@@ -26,9 +25,9 @@ namespace flightORM {
 
         IRecordedField<T>();
 
-        IRecordedField<T>(std::string name);
+        IRecordedField<T>(T* field);
 
-        IRecordedField<T>(std::string name, T value);
+        IRecordedField<T>(T* field, std::string name);
 
         void setName(std::string name);
 
