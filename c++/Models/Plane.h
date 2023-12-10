@@ -1,17 +1,20 @@
 #include "Model.h"
 #include "../IRecordedField.h"
+#include "../RecorderFieldsManager.h"
+
 
 namespace flightORM {
 
     struct Plane : public Model {
     public:
-        std::vector<IBaseField> m_allRecorderFields = {type};
+        RecorderFieldsManager recorderFieldsManager;
 
-        flightORM::IRecordedField<std::string> type;
+        std::string type;
+
+        Plane() = default;
 
         Plane(std::string type);
 
-        Plane(flightORM::IRecordedField<std::string> type);
     };
 
 }

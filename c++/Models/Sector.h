@@ -3,7 +3,8 @@
 namespace flightORM {
 
     class Sector : Model {
-
+    public:
+        Sector() = default;
     };
 
 }
