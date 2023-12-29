@@ -1,8 +1,0 @@
-
-namespace flightORM {
-
-    class ModelController {
-
-    };
-
-}

@@ -1,7 +1,0 @@
-namespace flightORM {
-
-    class IBaseField {
-
-    };
-
-}
