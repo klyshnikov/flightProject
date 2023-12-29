@@ -10,47 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="542eb3f8-7f71-49ec-ac7b-8b218950824f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Flight.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Plane.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Position.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serialization/sql/SqlSerialiseManager.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serialization/sql/SqlSerialiseManager.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serialization/sql/SqlSerializator.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serialization/sql/SqlSerializator.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/types/PlaneType.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/types/PlaneType.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/types/PositionType.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/types/PositionType.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/types/PrimaryType.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/types/PrimaryType.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/types/Type.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/types/Type.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ModelController.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ModelController.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBaseManagers/IDataBaseManager.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBaseManagers/IDataBaseManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IBaseField.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IBaseField.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IRecordedField.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IRecordedField.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Flight.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Flight.h" beforeDir="false" afterPath="$PROJECT_DIR$/models/Flight.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Model.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/models/Position.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Model.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Plane.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Plane.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Position.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Position.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Sector.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/models/Sector.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Sector.h" beforeDir="false" afterPath="$PROJECT_DIR$/models/Sector.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecorderFieldsManager.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecorderFieldsManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Table.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/models/Plane.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Table.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test" beforeDir="false" afterPath="$PROJECT_DIR$/test" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +91,7 @@
       <workItem from="1703770652107" duration="14069000" />
       <workItem from="1703790068262" duration="2737000" />
       <workItem from="1703792933560" duration="12402000" />
-      <workItem from="1703854152895" duration="18793000" />
+      <workItem from="1703854152895" duration="20551000" />
     </task>
     <servers />
   </component>
