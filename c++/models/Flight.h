@@ -3,28 +3,27 @@
 #include "Position.h"
 #include "Sector.h"
 #include "vector"
-#include "../IBaseField.h"
-#include "../IRecordedField.h"
 #include "map"
-#include "../DataBaseManagers/IDataBaseManager.h"
-#include "Model.h"
-#include "../RecorderFieldsManager.h"
+#include "../SqlRecorderedField.h"
+#include "../serialization/sql/SqlSerialiseManager.h"
+#include "../types/PrimaryType.h"
+#include "../types/PlaneType.h"
+#include "../types/PositionType.h"
+//#include "../types/IntType.h"
 
 namespace flightORM {
 
-    struct Flight : public Model {
+    struct Flight {
     public:
-        RecorderFieldsManager recorderFieldsManager;
+        flightORM::SqlSerialiseManager sqlSerialiseManager;
 
         std::string id;
         flightORM::Plane plane;
         flightORM::Position position;
-        flightORM::Sector sector;
+        //flightORM::Sector sector;
         double speed;
 
-        std::vector<IBaseField> objects();
-
-        Flight() = default;
+        Flight();
 
         Flight(std::string id, flightORM::Plane plane,
                flightORM::Position position, flightORM::Sector sector, double speed);
