@@ -1,15 +1,15 @@
 #include "string"
 #include "Plane.h"
 #include "Position.h"
-#include "Sector.h"
 #include "vector"
 #include "map"
-#include "../SqlRecorderedField.h"
+
 #include "../serialization/sql/SqlSerialiseManager.h"
-#include "../types/PrimaryType.h"
-#include "../types/PlaneType.h"
-#include "../types/PositionType.h"
+#include "../serialization/sql/RecordedFieldImpl.h"
 //#include "../types/IntType.h"
+
+#ifndef FLIGHT_H
+#define FLIGHT_H
 
 namespace flightORM {
 
@@ -25,8 +25,9 @@ namespace flightORM {
 
         Flight();
 
-        Flight(std::string id, flightORM::Plane plane,
-               flightORM::Position position, flightORM::Sector sector, double speed);
+        //Flight(std::string id, flightORM::Plane plane, flightORM::Position position, double speed);
     };
 }
+
+#endif
 

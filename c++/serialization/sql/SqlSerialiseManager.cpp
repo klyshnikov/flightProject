@@ -2,15 +2,19 @@
 
 namespace flightORM {
 
-    SqlSerialiseManager::SqlSerialiseManager(std::size_t count, flightORM::Type* field, ...) {
-        flightORM::Type* first = field;
+    SqlSerialiseManager::SqlSerialiseManager(std::size_t count, flightORM::RecordedField* field, ...) {
+        flightORM::RecordedField* first = field;
         while (count--) {
             recorderedFields.push_back(first);
             ++first;
         }
     }
 
-    void SqlSerialiseManager::addField(flightORM::Type* field) {
+    SqlSerialiseManager::SqlSerialiseManager(std::vector<RecordedField *> fields) {
+        recorderedFields = fields;
+    }
+
+    void SqlSerialiseManager::addField(flightORM::RecordedField* field) {
         recorderedFields.emplace_back(field);
     }
 
@@ -18,12 +22,9 @@ namespace flightORM {
         std::vector<std::string> fieldNames{};
 
         for (auto field : recorderedFields) {
-            if (field->isPrimary()) {
-                fieldNames.emplace_back(field->toString());
-            } else {
-                for (auto innerField : field->types) {
-
-                }
+            auto innerFields = field->getFieldNames();
+            for (auto innerField : innerFields) {
+                fieldNames.push_back(innerField);
             }
         }
 

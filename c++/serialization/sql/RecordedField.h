@@ -1,16 +1,16 @@
-//
-// Created by mihail on 30.12.23.
-//
+#include "vector"
+#include "string"
 
-#ifndef C_RECORDEDFIELD_H
-#define C_RECORDEDFIELD_H
+#ifndef RECORDED_FIELD_H
+#define RECORDED_FIELD_H
 
 namespace flightORM {
 
     class RecordedField {
-
+    public:
+        virtual std::vector<std::string> getFieldNames();
     };
 
-} // flightORM
+}
 
-#endif //C_RECORDEDFIELD_H
+#endif

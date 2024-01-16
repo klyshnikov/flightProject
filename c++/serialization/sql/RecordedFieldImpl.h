@@ -1,16 +1,21 @@
 #include "iostream"
+#include "RecordedField.h"
+
+#ifndef RECORDED_FIELD_IMPL_H
+#define RECORDED_FIELD_IMPL_H
 
 namespace flightORM {
 
     template <typename T>
-    class RecordedField {
+    class RecordedFieldImpl : public RecordedField {
     private:
-        void* value;
+        T* value;
     public:
-        RecordedField(T* obj);
-
+        RecordedFieldImpl(T* obj);
         T getValue();
-
+        std::vector<std::string> getFieldNames() override;
     };
 
 }
+
+#endif

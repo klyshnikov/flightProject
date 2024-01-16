@@ -1,6 +1,6 @@
 #include <vector>
 #include "iostream"
-#include "sql.types/SqlInt.h"
+#include "models/Flight.h"
 
 int main() {
     // Пример
@@ -23,10 +23,4 @@ int main() {
 
      * */
 
-    int a = 5;
-    auto obj1 = new flightORM::SqlInt(3);
-    auto obj2 = new flightORM::SqlInt(3);
-    auto obj3 = new flightORM::SqlInt(3);
-    std::vector<flightORM::SqlType*> v = {obj1, obj2, obj3};
-    std::cout << v[1]->getValue();
 }
