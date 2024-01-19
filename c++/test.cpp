@@ -1,26 +1,24 @@
 #include <vector>
 #include "iostream"
-#include "models/Flight.h"
+//#include "models/Flight.h"
+#include "models/Plane.h"
 
 int main() {
-    // Пример
-    /*
-     sqliteManager = ISqliteManager();
-     Table flightsTable = sqliteManager.createTable();
-     Table nowFlightTable = sqliteManager.createTable();
-     Flight flight;
+    flightORM::Plane plane = flightORM::Plane();
+//    flightORM::Position position = flightORM::Position();
 
-     for (auto el : file) {
-        flight = Flight(el.params());
-        sqliteManager.Insert(flightTable, flight);
-
-        if (flight.isOnAir()) {
-            sqliteManager.Insert(nowFlightTable, flight);
-        }
-     }
-
-     По итогу 2 записанные таблицы
-
-     * */
+//    plane.type = "Boeing737800";
+//    position.x = 1;
+//    position.y = 1;
+//    position.hight = 1;
+//
+//    flightORM::Flight flight = flightORM::Flight();
+//    flight.id = "ut464";
+//    flight.plane = plane;
+//    flight.position = position;
+//    flight.speed = 312;
+//
+//    auto names = flight.sqlSerialiseManager.getFieldNames();
+//    std::cout << 1;
 
 }

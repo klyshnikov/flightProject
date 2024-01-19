@@ -21,7 +21,7 @@ namespace flightORM {
         flightORM::Plane plane;
         flightORM::Position position;
         //flightORM::Sector sector;
-        double speed;
+        double speed{};
 
         Flight();
 

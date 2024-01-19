@@ -11,7 +11,7 @@ namespace flightORM {
     struct Plane : public Model {
     public:
 
-        std::string type;
+        std::string type = "-";
 
         Plane();
 

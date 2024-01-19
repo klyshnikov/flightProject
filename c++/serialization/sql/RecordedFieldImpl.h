@@ -11,7 +11,7 @@ namespace flightORM {
     private:
         T* value;
     public:
-        RecordedFieldImpl(T* obj);
+        explicit RecordedFieldImpl(T* obj);
         T getValue();
         std::vector<std::string> getFieldNames() override;
     };

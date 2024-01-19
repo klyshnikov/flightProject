@@ -11,9 +11,9 @@ namespace flightORM {
     class Position : public Model {
     public:
 
-        double x;
-        double y;
-        double hight;
+        double x{};
+        double y{};
+        double hight{};
 
         Position();
 
