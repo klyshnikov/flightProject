@@ -21,9 +21,9 @@ namespace flightORM {
         flightORM::Plane plane;
         flightORM::Position position;
         //flightORM::Sector sector;
-        double speed{};
+        double speed;
 
-        Flight();
+        Flight(std::string id, Plane plane, Position position, double speed);
 
         //Flight(std::string id, flightORM::Plane plane, flightORM::Position position, double speed);
     };

@@ -1,8 +1,13 @@
-//
-// Created by misha on 19.01.24.
-//
-
 #include "TableChangeService.h"
+#include "../methods/Methods.h"
 
 namespace flightORM {
-} // flightORM
+    void TableChangeService::insert(const flightORM::Table& table, flightORM::Model& model) {
+        std::vector<std::string> line = model.sqlSerialiseManager.getFieldNames();
+
+        std::string lineInString = Methods::getFromStringsSqlArrayString(line);
+
+        std::string request = "INSERT INTO " + table.name + " VALUES " + lineInString;
+        //sqlDao.make(request);
+    }
+}

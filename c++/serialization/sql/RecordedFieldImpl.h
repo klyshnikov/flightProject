@@ -1,8 +1,8 @@
-#include "iostream"
-#include "RecordedField.h"
-
 #ifndef RECORDED_FIELD_IMPL_H
 #define RECORDED_FIELD_IMPL_H
+
+#include "iostream"
+#include "RecordedField.h"
 
 namespace flightORM {
 
