@@ -1,6 +1,6 @@
 # flightProject
 
-Инсткрукция по сборке c++ проекта:
+## Инсткрукция по сборке c++ проекта:
 
 BUILD_DIR - папка для сборки
 
@@ -12,14 +12,14 @@ cd BUILD_DIR
 cmake PROJ_DIR
 ```
 
-Запуск c++ проекта:
+## Запуск c++ проекта:
 
 ```console
 make
 ```
 
 
-Инструкция по запуску python скриптов:
+## Инструкция по запуску python скриптов:
 
 ```console
 python3 scripts/SCRIPT_FILE.py 
