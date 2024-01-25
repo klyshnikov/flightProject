@@ -8,9 +8,7 @@ PROJ_DIR - относительный путь к c++
 
 
 >mkdir -p BUILD_DIR
-
 >cd BUILD_DIR
-
 >cmake PROJ_DIR
 
 
