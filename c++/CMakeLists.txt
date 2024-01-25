@@ -3,7 +3,7 @@ project(c___cmake)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(c___cmake main.cpp
+add_executable(c___cmake test.cpp
         models/Flight.cpp
         models/Flight.h
         models/Plane.cpp
