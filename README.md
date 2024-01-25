@@ -7,16 +7,20 @@ BUILD_DIR - папка для сборки
 PROJ_DIR - относительный путь к c++
 
 ```console
-$ mkdir -p BUILD_DIR
-$ cd BUILD_DIR
-$ cmake PROJ_DIR
+mkdir -p BUILD_DIR
+cd BUILD_DIR
+cmake PROJ_DIR
 ```
 
 Запуск c++ проекта:
 
->make
+```console
+make
+```
 
 
 Инструкция по запуску python скриптов:
 
->python3 scripts/SCRIPT_FILE.py 
+```console
+python3 scripts/SCRIPT_FILE.py 
+```
