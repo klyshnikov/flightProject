@@ -29,13 +29,16 @@ class Flightradar24apiParser(DataSource):
                 allAirCompanies.append(names[0])
                 if (len(names) > 1):
                     allAirCompanies.append(names[1])
-        DataSource.airCompanies = allAirCompanies
+        return allAirCompanies
 
     def getAllCurrentFlights(self):
-        self.getAllAirCompamies()
+        airCompanies = self.getAllAirCompamies()
         allCurrentFlights = []
-        for company in DataSource.airCompanies:
-            allCurrentFlights.extend(self.frObject.get_flights(airline = company))
+        print(f"all air compnies count = {len(airCompanies)}")
+        #for company in airCompanies:
+        #    allCurrentFlights.extend(self.frObject.get_flights(airline = company))
+        allCurrentFlights.extend(self.frObject.get_flights(airline = "AFL"))
+        print(f"afl flights count = {len(allCurrentFlights)}")
         return allCurrentFlights
 
     def getInfoOfAllCurrentFlights(self):
@@ -44,15 +47,11 @@ class Flightradar24apiParser(DataSource):
         size = 0
         flightsIter = 0
         while (size < len(allCurrentFlights)):
-            try:
-                print(size)
-                infoOfAllCurrentFlights.append( {
-                    allCurrentFlights[flightsIter].id: self.frObject.get_flight_details(allCurrentFlights[flightsIter].id)})
-                size += 1
-            except BaseException:
-                pass
-            else:
-                pass
+            first = allCurrentFlights[flightsIter].id
+            second_id = allCurrentFlights[flightsIter]
+            second = self.frObject.get_flight_details(second_id)
+            infoOfAllCurrentFlights.append( {first: second})
+            size += 1
             flightsIter += 1
         return infoOfAllCurrentFlights
 

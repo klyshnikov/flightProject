@@ -6,7 +6,6 @@ class DataSource:
     airportIATA = None
     icaoToIataMap = {"UUEE": "SVO"} #To be continued
     iataToIcaoMap = {"SVO": "UUEE"} #To be continued
-    airCompanies = []
 
     def setAirport(self, airport: str):
         if (len(airport) == 3):
