@@ -1,4 +1,4 @@
-from Parsing.DataSource import DataSource
+from parsing.DataSource import DataSource
 from bs4 import BeautifulSoup
 import requests
 

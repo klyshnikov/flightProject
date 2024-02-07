@@ -1,4 +1,4 @@
-from Parsing.DataSource import DataSource
+from parsing.DataSource import DataSource
 from bs4 import BeautifulSoup
 import requests
 from FlightRadar24 import FlightRadar24API
@@ -53,6 +53,9 @@ class Flightradar24apiParser(DataSource):
             infoOfAllCurrentFlights.append( {first: second})
             size += 1
             flightsIter += 1
+            if (flightsIter>1):
+                print(f"len current flights info = {len(infoOfAllCurrentFlights)}")
+                break
         return infoOfAllCurrentFlights
 
 
