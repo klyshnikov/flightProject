@@ -2,10 +2,12 @@ from parsing.DataSource import DataSource
 from bs4 import BeautifulSoup
 import requests
 from FlightRadar24 import FlightRadar24API
+from parsing.FlightRadar24Filter import FlightRadar24Filter
 
 class Flightradar24apiParser(DataSource):
 
     frObject = FlightRadar24API()
+    filter = FlightRadar24Filter()
 
     def flightIsOnAir(self, status: dict):
         return (status['live'] == True and status['text'].startswith('Estimated'))
@@ -41,8 +43,13 @@ class Flightradar24apiParser(DataSource):
         print(f"afl flights count = {len(allCurrentFlights)}")
         return allCurrentFlights
 
-    def getInfoOfAllCurrentFlights(self):
+    def getAllCurrentFlightsFiltered(self):
         allCurrentFlights = self.getAllCurrentFlights()
+        allCurrentFlightsFiltered = self.filter.get_flight_data_by_flight_array(allCurrentFlights, self.frObject)
+        return allCurrentFlightsFiltered
+
+    def getInfoOfAllCurrentFlights(self):
+        allCurrentFlights = self.getAllCurrentFlightsFiltered()
         infoOfAllCurrentFlights = []
         size = 0
         flightsIter = 0
@@ -66,18 +73,3 @@ class Flightradar24apiParser(DataSource):
             if (i['flight']['identification']['id'] != None):
                 print(i)
         #print(svo['airport']['pluginData']['schedule']['departures']['data'][2])
-
-
-
-
-
-
-
-        
-
-    
-
-
-
-
-        
