@@ -9,6 +9,7 @@ namespace calculation {
         double longitude;
 
         Point(double latitude, double longitude);
+        Point & operator+= (const Point& other);
 
     };
 
