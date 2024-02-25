@@ -16,4 +16,30 @@ namespace calculation {
 
         return std::sqrt(distanceOnGround*distanceOnGround + flightFrame.altitude*flightFrame.altitude);
     }
+
+    double Algorithms::countNoiseInSector(Sector *sector, const FlightFrame &flightFrame) {
+        return 0;
+    }
+
+    std::vector<Sector *> Algorithms::getNearestSectors(FlightFrame flightFrame, SectorBunch sectorBunch) {
+        int currentI = 0; int currentJ = 0;
+
+        for (int i = 0; i<sectorBunch.sectorTableSize; ++i) {
+            if (flightFrame.point.longitude <= sectorBunch.sectorTable[0][i].rightUp.longitude &&
+                flightFrame.point.longitude >= sectorBunch.sectorTable[0][i].leftDown.longitude) {
+                currentI = i;
+                break;
+            }
+        }
+
+        for (int j = 0; j<sectorBunch.sectorTableSize; ++j) {
+            if (flightFrame.point.latitude <= sectorBunch.sectorTable[j][0].rightUp.latitude &&
+                    flightFrame.point.latitude <= sectorBunch.sectorTable[j][0].leftDown.latitude) {
+                currentJ = j;
+            }
+        }
+
+
+    }
+
 }

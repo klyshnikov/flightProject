@@ -2,6 +2,7 @@
 #define CPP_SECTORBUNCH_H
 
 #include <cstdio>
+#include <vector>
 #include "Sector.h"
 
 namespace calculation {
