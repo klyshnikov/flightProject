@@ -6,9 +6,15 @@
 namespace calculation {
 
     class Sector {
+    public:
         Point center;
         Point leftDown;
-        Point RightUp;
+        Point rightUp;
+
+        Sector();
+        Sector(Point center, Point leftDown, Point rightUp);
+
+        void move(double latitude, double longitude);
     };
 
 }
