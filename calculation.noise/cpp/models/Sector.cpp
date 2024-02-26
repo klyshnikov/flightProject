@@ -9,7 +9,7 @@ namespace calculation {
     }
 
     Sector::Sector(Point center, Point leftDown, Point rightUp):
-            center(center), leftDown(leftDown), rightUp(rightUp) {}
+            center(center), leftDown(leftDown), rightUp(rightUp) {sectorNoise = SectorNoise();}
 
     Sector::Sector() :
         center(0, 0), leftDown(0, 0), rightUp(0, 0) {}
