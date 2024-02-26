@@ -1,4 +1,5 @@
 #include "Algorithms.h"
+#include "../variables/Variables.cpp"
 #include <cmath>
 
 namespace calculation {
@@ -21,8 +22,9 @@ namespace calculation {
         return 0;
     }
 
-    Sector* Algorithms::getCurrentSector(FlightFrame flightFrame, SectorBunch sectorBunch) {
-        int currentI = 0; int currentJ = 0;
+    std::vector<Sector *> Algorithms::getNearestSectors(FlightFrame flightFrame, SectorBunch sectorBunch) {
+
+        size_t currentI = 0; size_t currentJ = 0;
 
         for (int i = 0; i<sectorBunch.sectorTableSize; ++i) {
             if (flightFrame.point.longitude <= sectorBunch.sectorTable[0][i].rightUp.longitude &&
@@ -38,14 +40,21 @@ namespace calculation {
             }
         }
 
-        return &sectorBunch.sectorTable[currentI][currentJ];
+        int minLongitudeIndex = currentJ - (shape_of_nearest_sectors-1)/2;
+        size_t maxLongitudeIndex = currentJ + (shape_of_nearest_sectors-1)/2;
+        int minLatitudeIndex = currentI - (shape_of_nearest_sectors-1)/2;
+        size_t maxLatitudeIndex = currentI + (shape_of_nearest_sectors-1)/2;
+
+        std::vector<Sector*> nearestSectors = {};
+
+        for (int i = std::max(minLatitudeIndex, 0); i<=std::min(maxLatitudeIndex, sectorBunch.sectorTableSize-1); ++i) {
+            for (int j = std::max(minLongitudeIndex, 0); j<=std::min(maxLongitudeIndex, sectorBunch.sectorTableSize-1); ++j) {
+                nearestSectors.push_back(&sectorBunch.sectorTable[i][j]);
+            }
+        }
+
+        return nearestSectors;
+
     }
-
-    std::vector<Sector *> Algorithms::getNearestSectors(Sector* sector) {
-
-        return {};
-
-    }
-
 
 }
