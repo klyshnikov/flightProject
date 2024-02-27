@@ -57,4 +57,8 @@ namespace calculation {
 
     }
 
+    double Algorithms::getPlanePower(std::string planeType) {
+        return 0;
+    }
+
 }
