@@ -13,11 +13,14 @@ namespace calculation {
         std::string id;
         Point point;
         double altitude;
-        tm* time;
+        int speed;
+        tm time;
         std::string planeType;
 
-        FlightFrame(std::string id, double latitude, double longitude, double altitude,
-                    tm* time, std::string planeType);
+        FlightFrame() = default;
+
+        FlightFrame(std::string id, double latitude, double longitude, double altitude, int speed,
+                    tm time, std::string planeType);
     };
 
 }
