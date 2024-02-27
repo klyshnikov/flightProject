@@ -13,8 +13,9 @@ namespace calculation {
     class FlightsLogParser {
     public:
         std::ifstream file;
+        std::map<std::string, std::string> callsignPlanetypeMap;
 
-        FlightsLogParser(std::string fileName);
+        FlightsLogParser(std::string fileName, std::string callsignInfoFileName);
 
         bool parseLine(FlightFrame& flight);
 
