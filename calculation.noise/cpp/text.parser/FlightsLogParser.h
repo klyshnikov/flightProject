@@ -6,7 +6,10 @@
 #include <fstream>
 #include <sstream>
 #include <map>
+#include "../algorithms/Algorithms.h"
 #include "../models/FlightFrame.h"
+#include "../models/SectorBunch.h"
+//#include "../variables/Variables.cpp"
 
 namespace calculation {
 
@@ -23,7 +26,7 @@ namespace calculation {
 
         FlightFrame string2FlightFrame(std::string line);
 
-
+        SectorBunch generateSectorBunch();
     };
 
 }

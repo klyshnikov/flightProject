@@ -1,8 +1,12 @@
 #include "FlightsLogParser.h"
 
+#include <filesystem>
+#include <iostream>
+
 namespace calculation {
     FlightsLogParser::FlightsLogParser(std::string fileName, std::string callsignInfoFileName) {
-        file = std::ifstream(fileName);
+        std::filesystem::current_path("/home/misha/PycharmProjects/SheremetyegoParce");
+        file = std::ifstream( fileName);
         callsignPlanetypeMap = getCallsignPlanetypeMap(callsignInfoFileName);
     }
 
@@ -51,5 +55,19 @@ namespace calculation {
         return currentMap;
     }
 
+    SectorBunch FlightsLogParser::generateSectorBunch() {
+        FlightFrame flightFrame;
+        SectorBunch sectorBunch = SectorBunch(Point(sheremetyegoCords), 0.01014, 0.005605, 64);
 
+        while (parseLine(flightFrame)) {
+            // ready flightFrame
+            auto sectors = Algorithms::getNearestSectors(flightFrame, sectorBunch);
+            for (auto sector : sectors) {
+                double noise = Algorithms::countNoiseInSector(sector, flightFrame);
+                sector->sectorNoise.hourNoises[flightFrame.time.tm_hour].push_back(noise);
+            }
+        }
+
+        return sectorBunch;
+    }
 }
