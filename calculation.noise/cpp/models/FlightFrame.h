@@ -15,7 +15,7 @@ namespace calculation {
         double altitude;
         int speed;
         tm time;
-        std::string planeType;
+        std::string planeType_;
 
         FlightFrame() = default;
 
