@@ -1,3 +1,6 @@
+#ifndef CPP_VARIABELS_H
+#define CPP_VARIABELS_H
+
 #include "map"
 #include "string"
 
@@ -8,6 +11,11 @@ namespace calculation {
 
     const int shape_of_nearest_sectors = 3;
 
+    const int max_noise = 100;
+    const int bar_chart_size = 10;
+
     const std::map<std::string, double> planes_power = {
     };
 }
+
+#endif
