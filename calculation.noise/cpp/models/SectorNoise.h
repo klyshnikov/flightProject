@@ -9,7 +9,7 @@ namespace calculation {
     class SectorNoise {
     public:
         std::vector<double> hourNoises[24];
-
+        SectorNoise() = default;
     };
 
 }
