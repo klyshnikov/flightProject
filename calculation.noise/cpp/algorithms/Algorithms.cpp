@@ -1,5 +1,4 @@
 #include "Algorithms.h"
-#include "../variables/Variables.cpp"
 #include <cmath>
 
 namespace calculation {
@@ -19,24 +18,26 @@ namespace calculation {
     }
 
     double Algorithms::countNoiseInSector(Sector *sector, const FlightFrame &flightFrame) {
-        return 0;
+        return getPlaneNoise(flightFrame.planeType_) - 40*std::log10(countDistanceBetweenPointAndFlight(sector->center, flightFrame));
+        //return countDistanceBetweenPointAndFlight(sector->center, flightFrame);
     }
 
     std::vector<Sector *> Algorithms::getNearestSectors(FlightFrame flightFrame, SectorBunch sectorBunch) {
 
         size_t currentI = 0; size_t currentJ = 0;
 
-        for (int i = 0; i<sectorBunch.sectorTableSize; ++i) {
-            if (flightFrame.point.longitude <= sectorBunch.sectorTable[0][i].rightUp.longitude &&
-                flightFrame.point.longitude >= sectorBunch.sectorTable[0][i].leftDown.longitude) {
-                currentI = i;
+        for (int j = 0; j<sectorBunch.sectorTableSize; ++j) {
+            if (flightFrame.point.longitude <= sectorBunch.sectorTable[0][j].rightUp.longitude &&
+                flightFrame.point.longitude >= sectorBunch.sectorTable[0][j].leftDown.longitude) {
+                auto DEBUG1 = sectorBunch.sectorTable[0][j];
+                currentJ = j;
             }
         }
 
-        for (int j = 0; j<sectorBunch.sectorTableSize; ++j) {
-            if (flightFrame.point.latitude <= sectorBunch.sectorTable[j][0].rightUp.latitude &&
-                flightFrame.point.latitude >= sectorBunch.sectorTable[j][0].leftDown.latitude) {
-                currentJ = j;
+        for (int i = 0; i<sectorBunch.sectorTableSize; ++i) {
+            if (flightFrame.point.latitude <= sectorBunch.sectorTable[i][0].rightUp.latitude &&
+                flightFrame.point.latitude >= sectorBunch.sectorTable[i][0].leftDown.latitude) {
+                currentI = i;
             }
         }
 
@@ -46,6 +47,7 @@ namespace calculation {
         size_t maxLatitudeIndex = currentI + (shape_of_nearest_sectors-1)/2;
 
         std::vector<Sector*> nearestSectors = {};
+        auto DEBUG = sectorBunch.sectorTable[currentI][currentJ];
 
         for (int i = std::max(minLatitudeIndex, 0); i<=std::min(maxLatitudeIndex, sectorBunch.sectorTableSize-1); ++i) {
             for (int j = std::max(minLongitudeIndex, 0); j<=std::min(maxLongitudeIndex, sectorBunch.sectorTableSize-1); ++j) {
@@ -57,8 +59,29 @@ namespace calculation {
 
     }
 
-    double Algorithms::getPlanePower(std::string planeType) {
-        return 0;
+    double Algorithms::getPlaneNoise(std::string planeType) {
+        return 155;
     }
+
+    std::string Algorithms::getStringBiggerSize(std::string current, int size) {
+        while (current.size() < size) {
+            current += " ";
+        }
+
+        return current;
+    }
+
+    double Algorithms::scaleNoiseLevelToBarChart(double value) {
+        return (value/max_noise)*bar_chart_size;
+    }
+
+    double Algorithms::scaleNoiseLevelToBarChart(int value) {
+        return scaleNoiseLevelToBarChart(double(value));
+    }
+
+    int Algorithms::countNoiseLevelByVector(std::vector<double> vec) {
+        return int(std::accumulate(vec.begin(), vec.end(), 0) / double (vec.size()));
+    }
+
 
 }
