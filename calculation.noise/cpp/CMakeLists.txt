@@ -1,9 +1,12 @@
-cmake_minimum_required(VERSION 3.27)
-project(cpp)
+cmake_minimum_required(VERSION 3.17)
+
+set(TFNV tfnv)# Terminal Flight Noise Viewer
+
+project(${TFNV})
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(cpp main.cpp
+add_executable(${TFNV} main.cpp
         variables/Variables.h
         models/FlightFrame.cpp
         models/FlightFrame.h
