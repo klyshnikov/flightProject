@@ -6,7 +6,8 @@ namespace calculation {
 
     void ConsolePrinter::printNoiseByVector(noise_1hour_in_sector values) {
         if (!values.empty()) {
-            std::cout << getColoredInt(Algorithms::countNoiseLevelByVector(values), 2);
+            auto count = Algorithms::countNoiseLevelByVector(values);
+            std::cout << getColoredInt(count, 2);
             //getColoredInt(Algorithms::getStringBiggerSize(std::to_string(Algorithms::countNoiseLevelByVector(values)), 2), Algorithms::countNoiseLevelByVector(values));
             std::cout << " ";
         } else {

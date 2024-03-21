@@ -18,7 +18,9 @@ namespace calculation {
     }
 
     double Algorithms::countNoiseInSector(Sector *sector, const FlightFrame &flightFrame) {
-        return getPlaneNoise(flightFrame.planeType_) - 40*std::log10(countDistanceBetweenPointAndFlight(sector->center, flightFrame));
+        double noise =  getPlaneNoise(flightFrame.planeType_);
+        double distance_koeficient = 40*std::log10(countDistanceBetweenPointAndFlight(sector->center, flightFrame));
+        return std::max(noise - distance_koeficient, 0.0);
         //return countDistanceBetweenPointAndFlight(sector->center, flightFrame);
     }
 
