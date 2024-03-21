@@ -5,7 +5,7 @@
 
 namespace calculation {
     FlightsLogParser::FlightsLogParser(std::string fileName, std::string callsignInfoFileName) {
-        std::filesystem::current_path("/home/misha/PycharmProjects/SheremetyegoParce");
+///        std::filesystem::current_path("/home/misha/PycharmProjects/SheremetyegoParce");
         file = std::ifstream( fileName);
         callsignPlanetypeMap = getCallsignPlanetypeMap(callsignInfoFileName);
     }
