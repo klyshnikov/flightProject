@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "algorithm"
+
 #include "../models/FlightFrame.h"
 #include "../models/Sector.h"
 #include "../models/SectorBunch.h"
@@ -21,7 +22,7 @@ namespace calculation {
         static double scaleNoiseLevelToBarChart(double value);
         static double scaleNoiseLevelToBarChart(int value);
 
-        static int countNoiseLevelByVector(std::vector<double>);
+        static int countNoiseLevelByVector(noise_1hour_in_sector value);
     };
 
 }

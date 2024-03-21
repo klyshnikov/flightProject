@@ -5,6 +5,8 @@
 #include "string"
 
 namespace calculation {
+    using noise_1hour_in_sector = std::vector<double>;
+
     const std::pair<double, double> sheremetyegoCords = {55.973233, 37.409741};
 
     const double max_distance_to_count = 0;

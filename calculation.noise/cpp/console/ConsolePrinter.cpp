@@ -1,9 +1,10 @@
 #include "ConsolePrinter.h"
+
 #include "../algorithms/Algorithms.h"
 
 namespace calculation {
 
-    void ConsolePrinter::printNoiseByVector(std::vector<double> values) {
+    void ConsolePrinter::printNoiseByVector(noise_1hour_in_sector values) {
         if (!values.empty()) {
             std::cout << getColoredInt(Algorithms::countNoiseLevelByVector(values), 2);
             //getColoredInt(Algorithms::getStringBiggerSize(std::to_string(Algorithms::countNoiseLevelByVector(values)), 2), Algorithms::countNoiseLevelByVector(values));

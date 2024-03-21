@@ -79,8 +79,8 @@ namespace calculation {
         return scaleNoiseLevelToBarChart(double(value));
     }
 
-    int Algorithms::countNoiseLevelByVector(std::vector<double> vec) {
-        return int(std::accumulate(vec.begin(), vec.end(), 0) / double (vec.size()));
+    int Algorithms::countNoiseLevelByVector(noise_1hour_in_sector value) {
+        return int(std::accumulate(value.begin(), value.end(), 0) / double (value.size()));
     }
 
 
