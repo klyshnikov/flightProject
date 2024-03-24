@@ -16,7 +16,7 @@ namespace calculation {
     public:
         bool parseArguments(int argv, char** args);
 
-        //static void printSectorTableToConsole(char* path);
+        static void printSectorTableToConsole(char* path);
         static void printSectorTableToConsole(char* path, int hour);
         //static void printSectorTableToConsole(char* path, int hourStart, int hourEnd);
         //static void printSectorTableToConsole(char* path, double hourStart, double hourEnd);

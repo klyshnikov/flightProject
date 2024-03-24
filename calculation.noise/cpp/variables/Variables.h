@@ -6,12 +6,13 @@
 
 namespace calculation {
     using noise_1hour_in_sector = std::vector<double>;
+    using noise_24hour_in_sector = std::vector<double>*;
 
     const std::pair<double, double> sheremetyegoCords = {55.973233, 37.409741};
 
     const double max_distance_to_count = 0;
 
-    const int shape_of_nearest_sectors = 3;
+    const int shape_of_nearest_sectors = 10;
 
     const int max_noise = 100;
     const int bar_chart_size = 10;

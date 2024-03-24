@@ -83,7 +83,7 @@ namespace calculation {
     }
 
     double Algorithms::getPlaneNoise(std::string planeType) {
-        return 155;
+        return 170;
     }
 
     std::string Algorithms::getStringBiggerSize(std::string current, int size) {
@@ -103,7 +103,17 @@ namespace calculation {
     }
 
     int Algorithms::countNoiseLevelByVector(noise_1hour_in_sector value) {
+        if (value.empty()) return 0;
         return int(std::accumulate(value.begin(), value.end(), 0) / double (value.size()));
+    }
+
+    int Algorithms::countNoiseLevel(noise_24hour_in_sector value) {
+        int hourNoiseSum = 0;
+        for (int hour = 0; hour < 24; ++hour) {
+            hourNoiseSum += countNoiseLevelByVector(value[hour]);
+        }
+
+        return hourNoiseSum/24;
     }
 
 

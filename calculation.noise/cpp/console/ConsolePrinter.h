@@ -12,6 +12,7 @@ namespace calculation {
     class ConsolePrinter {
     public:
         void printNoiseByVector(noise_1hour_in_sector values);
+        void printNoiseBy24Vectors(noise_24hour_in_sector values);
         void printSectorNoiseByVector(std::vector<double>*);
         std::string getColoredInt(int, int);
     };

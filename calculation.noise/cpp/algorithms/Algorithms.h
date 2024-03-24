@@ -24,6 +24,7 @@ namespace calculation {
         static double scaleNoiseLevelToBarChart(int value);
 
         static int countNoiseLevelByVector(noise_1hour_in_sector value);
+        static int countNoiseLevel(noise_24hour_in_sector value);
     };
 
 }

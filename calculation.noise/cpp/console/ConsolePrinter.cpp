@@ -16,6 +16,13 @@ namespace calculation {
         }
     }
 
+    void ConsolePrinter::printNoiseBy24Vectors(noise_24hour_in_sector values) {
+        auto count = Algorithms::countNoiseLevel(values);
+        std::cout << getColoredInt(count, 2);
+        //getColoredInt(Algorithms::getStringBiggerSize(std::to_string(Algorithms::countNoiseLevelByVector(values)), 2), Algorithms::countNoiseLevelByVector(values));
+        std::cout << " ";
+    }
+
     void ConsolePrinter::printSectorNoiseByVector(std::vector<double>* currentSectorData) {
         std::vector<int> currentSectorDataToShow(24);
         std::vector<int> currentSectorData24Values(24);

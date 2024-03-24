@@ -15,9 +15,27 @@ namespace calculation {
         } else if (std::string(command) == "coordinates") {
             printSectorNoiseToConsole(args[1], std::stod(args[3]), std::stod(args[4]));
             return true;
+        } else if (std::string(command) == "all-table") {
+            printSectorTableToConsole(args[1]);
+            return true;
         }
 
         return false;
+    }
+
+    void ArgumentsParser::printSectorTableToConsole(char *path) {
+        std::string flightLog_FileName = std::string(path) + "/sheremetyevo_history";
+        std::string callSign_PlaneType_FileName = std::string(path) + "/callsign_info";
+        FlightsLogParser parser = FlightsLogParser(flightLog_FileName, callSign_PlaneType_FileName);
+        SectorBunch sectorBunch = parser.generateSectorBunch();
+        ConsolePrinter consolePrinter;
+
+        for (int i = 0; i < sectorBunch.sectorTableSize; ++i) {
+            for (int j = 0; j<sectorBunch.sectorTableSize; ++j) {
+                consolePrinter.printNoiseBy24Vectors(sectorBunch.sectorTable[i][j].sectorNoise.hourNoises);
+            }
+            std::cout << "\n";
+        }
     }
 
     void ArgumentsParser::printSectorTableToConsole(char* path, int hour) {
