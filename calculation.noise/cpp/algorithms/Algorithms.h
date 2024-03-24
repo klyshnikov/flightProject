@@ -15,6 +15,7 @@ namespace calculation {
     class Algorithms {
     public:
         static double countDistanceBetweenPointAndFlight(Point point, const FlightFrame& flightFrame);
+        static Sector* getNearestSector(Point point, SectorBunch sectorBunch);
         static std::vector<Sector*> getNearestSectors(FlightFrame flightFrame, SectorBunch sectorBunch);
         static double getPlaneNoise(std::string planeType);
         static double countNoiseInSector(Sector* sector, const FlightFrame& flightFrame);

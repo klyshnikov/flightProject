@@ -24,6 +24,26 @@ namespace calculation {
         //return countDistanceBetweenPointAndFlight(sector->center, flightFrame);
     }
 
+    Sector* Algorithms::getNearestSector(Point point, SectorBunch sectorBunch) {
+        size_t currentI = 0; size_t currentJ = 0;
+
+        for (int j = 0; j<sectorBunch.sectorTableSize; ++j) {
+            if (point.longitude <= sectorBunch.sectorTable[0][j].rightUp.longitude &&
+                point.longitude >= sectorBunch.sectorTable[0][j].leftDown.longitude) {
+                currentJ = j;
+            }
+        }
+
+        for (int i = 0; i<sectorBunch.sectorTableSize; ++i) {
+            if (point.latitude <= sectorBunch.sectorTable[i][0].rightUp.latitude &&
+                point.latitude >= sectorBunch.sectorTable[i][0].leftDown.latitude) {
+                currentI = i;
+            }
+        }
+
+        return &sectorBunch.sectorTable[currentI][currentJ];
+    }
+
     std::vector<Sector *> Algorithms::getNearestSectors(FlightFrame flightFrame, SectorBunch sectorBunch) {
 
         size_t currentI = 0; size_t currentJ = 0;
