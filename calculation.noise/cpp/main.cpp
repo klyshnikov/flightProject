@@ -16,8 +16,9 @@ int main(int argc, char** argv) {
         std::cout << "Wrong arguments\n"
                   << argv[0] << " <path_to_sheremetievo_history_directory> table <hour>\n"
                   << " or \n"
-                  << argv[0] << " <path_to_sheremetievo_history_directory> sector <x> <y>\n";
-
+                  << argv[0] << " <path_to_sheremetievo_history_directory> sector <x> <y>\n"
+                  << " or \n"
+                  << argv[0] << " <path_to_sheremetievo_history_directory> coordinates <latitude> <longitude>\n";
     }
 
     /*

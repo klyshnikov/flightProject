@@ -40,6 +40,7 @@ namespace calculation {
                 currentI = i;
             }
         }
+        //std::cout << currentI << " " << currentJ << "\n";
 
         return &sectorBunch.sectorTable[currentI][currentJ];
     }
