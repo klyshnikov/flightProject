@@ -46,8 +46,10 @@ namespace calculation {
     }
 
     std::string ConsolePrinter::getColoredInt(int value, int maxSize) {
-        std::vector<std::string> starts = {"\x1B[32m","\x1B[33m","\x1B[31m"};
-        //std::cout <<  starts[3*value/max_noise+1] << line << "\033[0m";
-        return starts[3*value/max_noise] + Algorithms::getStringBiggerSize(std::to_string(value), maxSize) + "\033[0m";
+        std::vector<std::string> starts = {"\x1B[33m","\x1B[31m"};
+        if (value == 0) {
+            return "\x1B[32m" + Algorithms::getStringBiggerSize(std::to_string(value), maxSize) + "\033[0m";
+        }
+        return starts[2*value/max_noise] + Algorithms::getStringBiggerSize(std::to_string(value), maxSize) + "\033[0m";
     }
 }
