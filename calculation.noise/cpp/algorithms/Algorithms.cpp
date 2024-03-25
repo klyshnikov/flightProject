@@ -14,7 +14,7 @@ namespace calculation {
         double delta = 2.0*std::asin(std::sqrt(intermedValue1+intermedValue2));
         double distanceOnGround = delta * 6372795.0;
 
-        return std::sqrt(distanceOnGround*distanceOnGround + flightFrame.altitude*flightFrame.altitude);
+        return std::sqrt(distanceOnGround*distanceOnGround + flightFrame.altitude*flightFrame.altitude*0.3048*0.3048);
     }
 
     double Algorithms::countNoiseInSector(Sector *sector, const FlightFrame &flightFrame) {
@@ -104,7 +104,11 @@ namespace calculation {
 
     int Algorithms::countNoiseLevelByVector(noise_1hour_in_sector value) {
         if (value.empty()) return 0;
-        return int(std::accumulate(value.begin(), value.end(), 0) / double (value.size()));
+        //std::sort(value.begin(), value.end());
+        auto max_el =  std::max_element(value.begin(), value.end());
+        return std::min(99, int(*max_el));
+        //return int(value[(value.size()*9)/10]);
+        //return int(std::accumulate(value.begin(), value.end(), 0) / double (value.size()));
     }
 
     int Algorithms::countNoiseLevel(noise_24hour_in_sector value) {

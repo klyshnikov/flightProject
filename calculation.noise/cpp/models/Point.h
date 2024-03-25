@@ -13,6 +13,7 @@ namespace calculation {
         Point() = default;
         Point(double latitude, double longitude);
         Point(std::pair<double, double>);
+        friend bool operator==(const Point&, const Point&);
         Point & operator+= (const Point& other);
 
     };

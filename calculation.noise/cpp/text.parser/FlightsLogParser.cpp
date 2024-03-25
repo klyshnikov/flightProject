@@ -62,6 +62,7 @@ namespace calculation {
         while (parseLine(flightFrame)) {
             // ready flightFrame
             auto sectors = Algorithms::getNearestSectors(flightFrame, sectorBunch);
+
             for (auto sector : sectors) {
                 double noise = Algorithms::countNoiseInSector(sector, flightFrame);
                 sector->sectorNoise.hourNoises[flightFrame.time.tm_hour].push_back(noise);

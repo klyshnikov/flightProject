@@ -13,4 +13,8 @@ namespace calculation {
         return *this;
     }
 
+    bool operator==(const Point &point_1, const Point &point_2) {
+        return (point_1.latitude == point_2.latitude) && (point_1.longitude == point_2.longitude);
+    }
+
 }
