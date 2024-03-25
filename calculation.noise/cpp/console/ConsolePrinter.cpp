@@ -28,8 +28,8 @@ namespace calculation {
         std::vector<int> currentSectorData24Values(24);
         for (int i = 0; i < 24; ++i) {
             if (!currentSectorData[i].empty()) {
-                currentSectorDataToShow[i] = (double(std::accumulate(currentSectorData[i].begin(), currentSectorData[i].end(), 0) / double(currentSectorData[i].size()))/max_noise)*bar_chart_size;
-                currentSectorData24Values[i] = std::accumulate(currentSectorData[i].begin(), currentSectorData[i].end(), 0) / double(currentSectorData[i].size());
+                currentSectorDataToShow[i] = (Algorithms::countNoiseLevelByVector(currentSectorData[i])/double(max_noise))*bar_chart_size;
+                currentSectorData24Values[i] = Algorithms::countNoiseLevelByVector(currentSectorData[i]);
             } else {
                 currentSectorDataToShow[i] = 0;
                 currentSectorData24Values[i] = 0;
