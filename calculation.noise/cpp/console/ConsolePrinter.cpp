@@ -39,16 +39,16 @@ namespace calculation {
         for (int row = bar_chart_size; row >= 1; --row) {
             for (int h = 0; h < 24; ++h) {
                 if (currentSectorDataToShow[h] >= row) {
-                    std::cout << "#  ";
+                    std::cout << Algorithms::getStringBiggerSize("#", 3);
                 } else {
-                    std::cout << "   ";
+                    std::cout << Algorithms::getStringBiggerSize(" ", 3);;
                 }
             }
             std::cout << "\n";
         }
 
         for (auto v : currentSectorData24Values) {
-            std::cout << v << "  ";
+            std::cout << Algorithms::getStringBiggerSize(std::to_string(v), 3);
         }
     }
 

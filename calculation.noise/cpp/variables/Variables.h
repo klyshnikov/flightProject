@@ -12,7 +12,7 @@ namespace calculation {
 
     const double max_distance_to_count = 0;
 
-    const int shape_of_nearest_sectors = 10;
+    const int shape_of_nearest_sectors = 6;
 
     const int max_noise = 100;
     const int bar_chart_size = 10;
