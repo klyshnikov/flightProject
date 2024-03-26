@@ -7,16 +7,18 @@ namespace calculation {
         char* command = args[2];
 
         if (std::string(command) == "table") {
+            if (argv<4) {
+                printSectorTableToConsole(args[1]);
+                return true;
+            }
             printSectorTableToConsole(args[1], std::stoi(args[3]));
             return true;
         } else if (std::string(command) == "sector") {
+            if (std::string(args[3]).find('.') != std::string::npos && std::string(args[4]).find('.') != std::string::npos) {
+                printSectorNoiseToConsole(args[1], std::stod(args[3]), std::stod(args[4]));
+                return true;
+            }
             printSectorNoiseToConsole(args[1], std::stoi(args[3]), std::stoi(args[4]));
-            return true;
-        } else if (std::string(command) == "coordinates") {
-            printSectorNoiseToConsole(args[1], std::stod(args[3]), std::stod(args[4]));
-            return true;
-        } else if (std::string(command) == "all-table") {
-            printSectorTableToConsole(args[1]);
             return true;
         }
 
