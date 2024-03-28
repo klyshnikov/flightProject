@@ -11,6 +11,7 @@ namespace calculation {
     public:
         Sector** sectorTable;
         size_t sectorTableSize;
+        Point center_;
 
         SectorBunch(Point center, double length, double width, int sectorTableSize);
     };

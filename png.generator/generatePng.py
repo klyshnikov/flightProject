@@ -16,12 +16,12 @@ async def main(latitude: float, longitude: float):
     page = await browser.newPage()
     await page.goto(f"file://{os.path.abspath('.')}/map.html")
     await page.setViewport({'width': 1500, 'height': 1500})
-    await page.screenshot({'path': "map.png"})
+    await page.screenshot({'path': "pictures/map.png"})
     # os.remove("map.html")
 
 
 if __name__ == '__main__':
     asyncio.get_event_loop().run_until_complete(main(float(sys.argv[1]), float(sys.argv[2])))
-    im = Image.open('map.png')
+    im = Image.open('pictures/map.png')
     im_crop = im.crop((285, 285, 1225, 1225))
-    im_crop.save('map.png', quality=95)
+    im_crop.save('pictures/map.png', quality=95)

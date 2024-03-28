@@ -2,7 +2,7 @@
 
 namespace calculation {
 
-    SectorBunch::SectorBunch(Point center, double length, double width, int sectorTableSize) {
+    SectorBunch::SectorBunch(Point center, double length, double width, int sectorTableSize) : center_(center) {
         this->sectorTableSize = sectorTableSize;
         sectorTable = new Sector*[sectorTableSize];
         for (int i = 0; i<sectorTableSize; ++i) {

@@ -29,4 +29,6 @@ add_executable(${TFNV} main.cpp
         image.generator/SvgGenerator.cpp
         image.generator/SvgGenerator.h
         image.generator/ColorArgument.cpp
-        image.generator/ColorArgument.h)
+        image.generator/ColorArgument.h
+        image.generator/PngGenerator.cpp
+        image.generator/PngGenerator.h)

@@ -1,9 +1,11 @@
 #include "SvgGenerator.h"
+#include "PngGenerator.h"
 
 namespace calculation {
 
     void SvgGenerator::generateSvgImage(const SectorBunch& sectorBunch, std::string fileName) {
         createSvgImage(fileName);
+        addBackground(fileName, sectorBunch);
 
         for (int i = 0; i<sectorBunch.sectorTableSize; ++i) {
             for (int j = 0; j<sectorBunch.sectorTableSize; ++j) {
@@ -51,6 +53,17 @@ namespace calculation {
         out.open(path_+fileName, std::ios::app);
         if (out.is_open()) {
             out << "</svg> \n";
+        }
+        out.close();
+    }
+
+    void SvgGenerator::addBackground(std::string fileName, const SectorBunch& sectorBunch) {
+        PngGenerator::generatePng(sectorBunch.center_.latitude, sectorBunch.center_.longitude);
+
+        std::ofstream out;
+        out.open(path_+fileName, std::ios::app);
+        if (out.is_open()) {
+            out << R"(<image href="map.png" x="0" y="0" height="2048" width="2048" />)";
         }
         out.close();
     }
