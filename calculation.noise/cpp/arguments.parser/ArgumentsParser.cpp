@@ -1,4 +1,5 @@
 #include "ArgumentsParser.h"
+#include "../image.generator/SvgGenerator.h"
 
 namespace calculation {
     bool ArgumentsParser::parseArguments(int argv, char **args) {
@@ -19,6 +20,9 @@ namespace calculation {
                 return true;
             }
             printSectorNoiseToConsole(args[1], std::stoi(args[3]), std::stoi(args[4]));
+            return true;
+        } else if (std::string(command) == "map") {
+            generateMap(args[1], args[3]);
             return true;
         }
 
@@ -79,5 +83,15 @@ namespace calculation {
         consolePrinter.printSectorNoiseByVector(Algorithms::getNearestSector({latitude, longitude}, sectorBunch)->sectorNoise.hourNoises);
 
         std::cout << "\n";
+    }
+
+    void ArgumentsParser::generateMap(char *path, char *fileName) {
+        std::string flightLog_FileName = std::string(path) + "/sheremetyevo_history";
+        std::string callSign_PlaneType_FileName = std::string(path) + "/callsign_info";
+        FlightsLogParser parser = FlightsLogParser(flightLog_FileName, callSign_PlaneType_FileName);
+        SectorBunch sectorBunch = parser.generateSectorBunch();
+        SvgGenerator svgGenerator;
+
+        svgGenerator.generateSvgImage(sectorBunch, std::string(fileName));
     }
 }

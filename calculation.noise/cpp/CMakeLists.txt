@@ -25,4 +25,8 @@ add_executable(${TFNV} main.cpp
         arguments.parser/ArgumentsParser.cpp
         arguments.parser/ArgumentsParser.h
         console/ConsolePrinter.cpp
-        console/ConsolePrinter.h)
+        console/ConsolePrinter.h
+        image.generator/SvgGenerator.cpp
+        image.generator/SvgGenerator.h
+        image.generator/ColorArgument.cpp
+        image.generator/ColorArgument.h)

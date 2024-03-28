@@ -24,6 +24,8 @@ namespace calculation {
 
         static void printSectorNoiseToConsole(char* path, int x, int y);
         static void printSectorNoiseToConsole(char* path, double latitude, double longitude);
+
+        static void generateMap(char* path, char* fileName);
     };
 
 }

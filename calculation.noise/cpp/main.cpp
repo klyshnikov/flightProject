@@ -1,8 +1,10 @@
 #include <iostream>
 #include "arguments.parser/ArgumentsParser.h"
+#include "image.generator/SvgGenerator.h"
 
 using namespace calculation;
 int main(int argc, char** argv) {
+
     ArgumentsParser argumentsParser;
     if (!argumentsParser.parseArguments(argc, argv)) {
         std::cout << "Wrong arguments\n"
