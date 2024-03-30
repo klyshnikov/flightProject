@@ -21,6 +21,9 @@ namespace calculation {
         void addNoiseInImage(const SectorBunch& sectorBunch, std::string fileName, int i, int j);
         void endSvgFile(std::string fileName);
         void addBackground(std::string fileName, const SectorBunch& sectorBunch);
+        void addStartedScript(std::string fileName);
+        void addBarChartSvg(std::string fileName, const SectorBunch& sectorBunch);
+        std::vector<int> get24NoisesInSector(const SectorBunch& sectorBunch, int i, int j);
 
         std::string getGistogram(const SectorBunch& sectorBunch, int i, int j);
     };
