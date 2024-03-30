@@ -18,9 +18,11 @@ namespace calculation {
         ColorArgument getColor(int noise);
 
         void createSvgImage(std::string fileName);
-        void addNoiseInImage(int noise, std::string fileName, int i, int j);
+        void addNoiseInImage(const SectorBunch& sectorBunch, std::string fileName, int i, int j);
         void endSvgFile(std::string fileName);
         void addBackground(std::string fileName, const SectorBunch& sectorBunch);
+
+        std::string getGistogram(const SectorBunch& sectorBunch, int i, int j);
     };
 
 }

@@ -9,8 +9,7 @@ namespace calculation {
 
         for (int i = 0; i<sectorBunch.sectorTableSize; ++i) {
             for (int j = 0; j<sectorBunch.sectorTableSize; ++j) {
-                int noise = Algorithms::countNoiseLevel(sectorBunch.sectorTable[i][j].sectorNoise.hourNoises);
-                addNoiseInImage(noise, fileName, i, j);
+                addNoiseInImage(sectorBunch, fileName, i, j);
             }
         }
 
@@ -27,14 +26,15 @@ namespace calculation {
         std::ofstream out;
         out.open(path_+fileName);
         if (out.is_open()) {
-            out << R"(<svg width="2048" height="2048" xlink="https://www.w3.org/2000/svg">)";
-            out << "\n";
+            out << R"__(<?xml version="1.0" standalone="no"?>)__" << "\n"
+                << R"__(<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">)__" << "\n"
+                << R"__(<svg version="1.1" width="2048" height="2048" onload="init(evt)" viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">)__" << "\n";
         }
         out.close();
     }
 
-    void SvgGenerator::addNoiseInImage(int noise, std::string fileName, int i, int j) {
-        ColorArgument colorArgument = getColor(noise);
+   void SvgGenerator::addNoiseInImage(const SectorBunch& sectorBunch, std::string fileName, int i, int j) {
+        ColorArgument colorArgument = getColor(Algorithms::countNoiseLevel(sectorBunch.sectorTable[i][j].sectorNoise.hourNoises));
         std::ofstream out;
         out.open(path_+fileName, std::ios::app);
         if (out.is_open()) {
@@ -43,7 +43,7 @@ namespace calculation {
             << colorArgument.g_ << ","
             << colorArgument.b_ << ","
             << colorArgument.transparency_
-            << ")\" /> \n";
+            << ")\"> \n" << getGistogram(sectorBunch, i, j) << R"(</rect>)";
         }
         out.close();
     }
@@ -68,5 +68,37 @@ namespace calculation {
         out.close();
     }
 
+    std::string SvgGenerator::getGistogram(const SectorBunch& sectorBunch, int i, int j) {
+        std::vector<int> currentSectorDataToShow(24);
+        std::vector<int> currentSectorData24Values(24);
+        std::string result = "";
+        result += "<title>\n";
+        for (int i = 0; i < 24; ++i) {
+            if (!sectorBunch.sectorTable[i][j].sectorNoise.hourNoises[i].empty()) {
+                currentSectorDataToShow[i] = (Algorithms::countNoiseLevelByVector(sectorBunch.sectorTable[i][j].sectorNoise.hourNoises[i])/double(max_noise))*bar_chart_size;
+                currentSectorData24Values[i] = Algorithms::countNoiseLevelByVector(sectorBunch.sectorTable[i][j].sectorNoise.hourNoises[i]);
+            } else {
+                currentSectorDataToShow[i] = 0;
+                currentSectorData24Values[i] = 0;
+            }
+        }
+
+        for (int row = bar_chart_size; row >= 1; --row) {
+            for (int h = 0; h < 24; ++h) {
+                if (currentSectorDataToShow[h] >= row) {
+                    result += Algorithms::getStringBiggerSize("#", 3);
+                } else {
+                    result += Algorithms::getStringBiggerSize(" ", 3);;
+                }
+            }
+            result += "\n";
+        }
+
+        for (auto v : currentSectorData24Values) {
+            result += Algorithms::getStringBiggerSize(std::to_string(v), 3);
+        }
+        result += "</title>";
+        return result;
+    }
 
 }
