@@ -12,7 +12,6 @@ namespace calculation {
 
     class SvgGenerator {
     public:
-        //std::string path_ = "../../../../pictures";
         std::string path_ = "pictures/";
 
         void generateSvgImage(const SectorBunch& sectorBunch, std::string fileName);
