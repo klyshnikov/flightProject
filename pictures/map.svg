@@ -1,4 +1,6 @@
-<svg width="2048" height="2048" xlink="https://www.w3.org/2000/svg">
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="2048" height="2048" onload="init(evt)" viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <image href="map.png" x="0" y="0" height="2048" width="2048" />	<rect x="0" y="0" width="32" height="32" fill="rgba(100,155,0,0.3)" /> 
 	<rect x="32" y="0" width="32" height="32" fill="rgba(105,150,0,0.3)" /> 
 	<rect x="64" y="0" width="32" height="32" fill="rgba(110,145,0,0.3)" /> 
