@@ -293,13 +293,13 @@ function hideTooltip() {
     std::vector<int> SvgGenerator::get24NoisesInSector(const SectorBunch &sectorBunch, int i, int j) {
         std::vector<int> currentSectorDataToShow(24);
         std::vector<int> currentSectorData24Values(24);
-        for (int i = 0; i < 24; ++i) {
-            if (!sectorBunch.sectorTable[i][j].sectorNoise.hourNoises[i].empty()) {
-                currentSectorDataToShow[i] = (Algorithms::countNoiseLevelByVector(sectorBunch.sectorTable[i][j].sectorNoise.hourNoises[i])/double(max_noise))*bar_chart_size;
-                currentSectorData24Values[i] = Algorithms::countNoiseLevelByVector(sectorBunch.sectorTable[i][j].sectorNoise.hourNoises[i]);
+        for (int h = 0; h < 24; ++h) {
+            if (!sectorBunch.sectorTable[i][j].sectorNoise.hourNoises[h].empty()) {
+                currentSectorDataToShow[h] = (Algorithms::countNoiseLevelByVector(sectorBunch.sectorTable[i][j].sectorNoise.hourNoises[h])/double(max_noise))*bar_chart_size;
+                currentSectorData24Values[h] = Algorithms::countNoiseLevelByVector(sectorBunch.sectorTable[i][j].sectorNoise.hourNoises[h]);
             } else {
-                currentSectorDataToShow[i] = 0;
-                currentSectorData24Values[i] = 0;
+                currentSectorDataToShow[h] = 0;
+                currentSectorData24Values[h] = 0;
             }
         }
 
