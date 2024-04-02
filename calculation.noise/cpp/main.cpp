@@ -16,6 +16,6 @@ int main(int argc, char** argv) {
                   << " or \n"
                   << argv[0] << " <path_to_sheremetievo_history_directory> sector <latitude> <longitude>\n"
                   << " or \n"
-                  << argv[0] << " <path_to_sheremetievo_history_directory> map <directory to save pictures>";
+                  << argv[0] << " <path_to_sheremetievo_history_directory> map <directory to save pictures>\n";
     }
 }

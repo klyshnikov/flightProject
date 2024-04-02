@@ -4,6 +4,9 @@
 namespace calculation {
     bool ArgumentsParser::parseArguments(int argv, char **args) {
         //if (argv < 5) return -1;
+        if (argv < 3) {
+            return false;
+        }
 
         char* command = args[2];
 
