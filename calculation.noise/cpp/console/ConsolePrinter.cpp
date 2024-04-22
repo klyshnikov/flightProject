@@ -8,11 +8,9 @@ namespace calculation {
         if (!values.empty()) {
             auto count = Algorithms::countNoiseLevelByVector(values);
             std::cout << getColoredInt(count, 2);
-            //getColoredInt(Algorithms::getStringBiggerSize(std::to_string(Algorithms::countNoiseLevelByVector(values)), 2), Algorithms::countNoiseLevelByVector(values));
             std::cout << " ";
         } else {
             std::cout << getColoredInt(0    , 2) << " ";
-            //std::cout << "\x1B[31mTexting\033[0m";
         }
     }
 

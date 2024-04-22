@@ -43,7 +43,7 @@ namespace calculation {
             for (int j = 0; j<sectorBunch.sectorTableSize; ++j) {
                 consolePrinter.printNoiseBy24Vectors(sectorBunch.sectorTable[i][j].sectorNoise.hourNoises);
             }
-            std::cout << "\n";
+            std::cout << std::endl;
         }
     }
 
@@ -59,7 +59,7 @@ namespace calculation {
             for (int j = 0; j<sectorBunch.sectorTableSize; ++j) {
                 consolePrinter.printNoiseByVector(sectorBunch.sectorTable[i][j].sectorNoise.hourNoises[hour]);
             }
-            std::cout << "\n";
+            std::cout << std::endl;
         }
     }
 
