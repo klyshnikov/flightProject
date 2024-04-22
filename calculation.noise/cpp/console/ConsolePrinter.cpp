@@ -7,6 +7,7 @@ namespace calculation {
     void ConsolePrinter::printNoiseByVector(noise_1hour_in_sector values) {
         if (!values.empty()) {
             auto count = Algorithms::countNoiseLevelByVector(values);
+            count = Algorithms::normalizeNoise(count);
             std::cout << getColoredInt(count, 2);
             std::cout << " ";
         } else {
@@ -15,10 +16,14 @@ namespace calculation {
     }
 
     void ConsolePrinter::printNoiseBy24Vectors(noise_24hour_in_sector values) {
-        auto count = Algorithms::countNoiseLevel(values);
-        std::cout << getColoredInt(count, 2);
-        //getColoredInt(Algorithms::getStringBiggerSize(std::to_string(Algorithms::countNoiseLevelByVector(values)), 2), Algorithms::countNoiseLevelByVector(values));
-        std::cout << " ";
+        if (!values->empty()) {
+            auto count = Algorithms::countNoiseLevel(values);
+            count = Algorithms::normalizeNoise(count);
+            std::cout << getColoredInt(count, 2);
+            std::cout << " ";
+        } else {
+            std::cout << getColoredInt(0, 2) << " ";
+        }
     }
 
     void ConsolePrinter::printSectorNoiseByVector(std::vector<double>* currentSectorData) {
@@ -32,6 +37,7 @@ namespace calculation {
                 currentSectorDataToShow[i] = 0;
                 currentSectorData24Values[i] = 0;
             }
+            currentSectorData24Values[i] = Algorithms::normalizeNoise(currentSectorData24Values[i]);
         }
 
         for (int row = bar_chart_size; row >= 1; --row) {

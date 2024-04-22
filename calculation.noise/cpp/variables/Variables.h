@@ -17,8 +17,10 @@ namespace calculation {
     const int max_noise = 100;
     const int bar_chart_size = 10;
 
-    const std::map<std::string, double> planes_power = {
-    };
+    const std::map<std::string, double> planes_power = {};
+
+    const std::vector<std::string> groupPlanesBigNoise = {"B77W", "A333", "B772", "B789", "B788", "IL76"};
+    const std::vector<std::string> groupPlanesSmallNoise = {"CRJ2", "SU95", "E195"};
 }
 
 #endif

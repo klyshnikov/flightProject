@@ -19,9 +19,8 @@ namespace calculation {
 
     double Algorithms::countNoiseInSector(Sector *sector, const FlightFrame &flightFrame) {
         double noise =  getPlaneNoise(flightFrame.planeType_);
-        double distance_koeficient = 40*std::log10(countDistanceBetweenPointAndFlight(sector->center, flightFrame));
+        double distance_koeficient = 20*std::log10(countDistanceBetweenPointAndFlight(sector->center, flightFrame));
         return std::max(noise - distance_koeficient, 0.0);
-        //return countDistanceBetweenPointAndFlight(sector->center, flightFrame);
     }
 
     Sector* Algorithms::getNearestSector(Point point, const SectorBunch& sectorBunch) {
@@ -83,7 +82,11 @@ namespace calculation {
     }
 
     double Algorithms::getPlaneNoise(std::string planeType) {
-        return 170;
+        if (std::find(groupPlanesBigNoise.begin(), groupPlanesBigNoise.end(), planeType) != groupPlanesBigNoise.end())
+            return 120;
+        if (std::find(groupPlanesSmallNoise.begin(), groupPlanesSmallNoise.end(), planeType) != groupPlanesSmallNoise.end())
+            return 100;
+        return 110;
     }
 
     std::string Algorithms::getStringBiggerSize(std::string current, int size) {
@@ -125,4 +128,9 @@ namespace calculation {
         return hourNoiseSum/24;
     }
 
+    int Algorithms::normalizeNoise(const double& value) {
+        if (value < 0) return 0;
+        if (value > 99) return 99;
+        return value;
+    }
 }

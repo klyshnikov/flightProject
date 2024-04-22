@@ -22,6 +22,7 @@ namespace calculation {
         static std::string getStringBiggerSize(std::string current, int size);
         static double scaleNoiseLevelToBarChart(double value);
         static double scaleNoiseLevelToBarChart(int value);
+        static int normalizeNoise(const double& value);
 
         static int countNoiseLevelByVector(noise_1hour_in_sector value);
         static int countNoiseLevel(noise_24hour_in_sector value);
