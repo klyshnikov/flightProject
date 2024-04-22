@@ -5,12 +5,6 @@
 using namespace calculation;
 int main(int argc, char** argv) {
 
-    FlightsLogParser flightsLogParser("data/sheremetyego/sheremetyevo_history", "data/sheremetyego/callsign_info");
-    SectorBunch sectorBunch = flightsLogParser.generateSectorBunch();
-    Sector* nearest = Algorithms::getNearestSector({55.9374357,37.4871619}, sectorBunch);
-    std::cout << "55.9374357 37.4871619\n";
-    std::cout << nearest->center.latitude << " " << nearest->center.longitude << "\n";
-
     ArgumentsParser argumentsParser;
     if (!argumentsParser.parseArguments(argc, argv)) {
         std::cout << "Wrong arguments\n"

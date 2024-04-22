@@ -24,7 +24,7 @@ namespace calculation {
         //return countDistanceBetweenPointAndFlight(sector->center, flightFrame);
     }
 
-    Sector* Algorithms::getNearestSector(Point point, SectorBunch sectorBunch) {
+    Sector* Algorithms::getNearestSector(Point point, const SectorBunch& sectorBunch) {
         size_t currentI = 0; size_t currentJ = 0;
 
         for (int j = 0; j<sectorBunch.sectorTableSize; ++j) {
@@ -45,7 +45,7 @@ namespace calculation {
         return &sectorBunch.sectorTable[currentI][currentJ];
     }
 
-    std::vector<Sector *> Algorithms::getNearestSectors(FlightFrame flightFrame, SectorBunch sectorBunch) {
+    std::vector<Sector *> Algorithms::getNearestSectors(FlightFrame flightFrame, const SectorBunch& sectorBunch) {
 
         size_t currentI = 0; size_t currentJ = 0;
 
@@ -104,11 +104,16 @@ namespace calculation {
 
     int Algorithms::countNoiseLevelByVector(noise_1hour_in_sector value) {
         if (value.empty()) return 0;
-        //std::sort(value.begin(), value.end());
-        auto max_el =  std::max_element(value.begin(), value.end());
-        return std::min(99, int(*max_el));
-        //return int(value[(value.size()*9)/10]);
-        //return int(std::accumulate(value.begin(), value.end(), 0) / double (value.size()));
+        double percent90 = INT32_MAX;
+        if (value.size() <= 99) return *std::max_element(value.begin(), value.end());
+        int i;
+        for (i = 99; i < value.size(); i += 100) {
+            auto mx = *std::max_element(&value[i-99], &value[i]);
+            percent90 = std::min(percent90, mx);
+        }
+        auto mx = *std::max_element(&value[i-100], &value[value.size()-1]);
+        percent90 = std::min(percent90, mx);
+        return percent90;
     }
 
     int Algorithms::countNoiseLevel(noise_24hour_in_sector value) {
@@ -119,6 +124,5 @@ namespace calculation {
 
         return hourNoiseSum/24;
     }
-
 
 }
